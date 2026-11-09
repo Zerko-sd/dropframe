@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dropframe: edit like a motion designer</title>
+<meta name="description" content="An agent skill that turns your footage, brand kit and a song into a beat-synced, After-Effects-quality trailer, with sync you can measure and no AI look.">
+<meta property="og:title" content="dropframe: every cut on the kick, every drop on the frame">
+<meta property="og:description" content="Beat-synced, After-Effects-quality motion video from your footage and your song. Open-source agent skill.">
+<meta property="og:image" content="https://zerko-sd.github.io/dropframe/after.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#030403; --fg:#ecefe8; --dim:#8b937f; --accent:#a9ff55; --card:#0b0e09; --line:#1d2418; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--fg); font-family:'Space Grotesk',system-ui,sans-serif; line-height:1.55; }
+  a { color:var(--accent); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 20px; }
+  header { padding:72px 0 28px; text-align:center; position:relative; overflow:hidden; }
+  header::after { content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--accent);
+    box-shadow:0 0 24px 4px rgba(169,255,85,.55); }
+  .tag { font-family:'JetBrains Mono',monospace; color:var(--accent); letter-spacing:.3em; font-size:12px; }
+  h1 { font-size:clamp(48px,10vw,112px); font-weight:300; letter-spacing:.06em; margin:10px 0 6px; }
+  .sub { font-size:clamp(18px,2.6vw,24px); color:var(--fg); font-weight:500; }
+  .lede { color:var(--dim); max-width:640px; margin:14px auto 0; }
+  .hero { margin:40px auto 0; border:1px solid var(--line); border-radius:14px; overflow:hidden; max-width:900px; box-shadow:0 0 80px rgba(169,255,85,.08); }
+  .hero img { display:block; width:100%; }
+  .cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:28px 0 8px; }
+  .btn { font-family:'JetBrains Mono',monospace; font-size:14px; padding:12px 18px; border-radius:10px; text-decoration:none; border:1px solid var(--line); color:var(--fg); }
+  .btn.primary { background:var(--accent); color:#0b0f07; border-color:var(--accent); font-weight:500; }
+  section { padding:64px 0 8px; }
+  h2 { font-weight:500; font-size:28px; margin-bottom:18px; }
+  h2 span { color:var(--accent); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .card b { display:block; margin-bottom:6px; }
+  .card p { color:var(--dim); font-size:15px; }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .pair figure { margin:0; }
+  .pair img, .gifs img, .board { width:100%; border-radius:10px; border:1px solid var(--line); display:block; }
+  figcaption { color:var(--dim); font-size:13px; margin-top:6px; font-family:'JetBrains Mono',monospace; }
+  .gifs { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; overflow-x:auto;
+    font-family:'JetBrains Mono',monospace; font-size:13.5px; color:#dfe6d6; }
+  pre .c { color:var(--dim); }
+  table { width:100%; border-collapse:collapse; font-size:15px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--accent); font-weight:500; }
+  td:first-child { color:var(--dim); white-space:nowrap; }
+  .tw { overflow-x:auto; }
+  footer { padding:56px 0 64px; text-align:center; color:var(--dim); font-size:14px; }
+  @media (max-width:640px) { .pair, .gifs { grid-template-columns:1fr; } header { padding-top:48px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="tag">AGENT SKILL // OPEN SOURCE</div>
+    <h1>dropframe</h1>
+    <div class="sub">Every cut on the kick. Every drop on the frame.</div>
+    <p class="lede">Give your agent your footage, your brand kit and a song. Get back a beat-synced, After-Effects-quality trailer, with sync you can measure and no AI look.</p>
+    <div class="hero"><img src="drop.gif" alt="dropframe: the drop, a layered card hitting on the downbeat"></div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Zerko-sd/dropframe">★ Star on GitHub</a>
+      <a class="btn" href="#install">Install</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Why it doesn't look <span>AI</span></h2>
+    <div class="grid">
+      <div class="card"><b>Music-first</b><p>One exact beat grid fitted to your song. Cuts only on strong kicks, never the weak beat.</p></div>
+      <div class="card"><b>Measured sync</b><p>Audio vs cut reported in milliseconds. The reference drop lands +0.9ms off the beat.</p></div>
+      <div class="card"><b>Your track, remixed</b><p>Filter-sweep build, 16th to 32nd stutter, half a beat of silence, then the drop. No stock SFX.</p></div>
+      <div class="card"><b>AE-grade motion</b><p>Expo eases, real motion blur, momentum cuts, multiplane depth, cut-on-action.</p></div>
+      <div class="card"><b>One world</b><p>A single visual system, so the trailer reads as one continuous shot, not stitched clips.</p></div>
+      <div class="card"><b>Re-edits too</b><p>Point it at an old edit and a new song. It re-times, trims flash frames and rebuilds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Before <span>/</span> after</h2>
+    <div class="pair">
+      <figure><img src="before.jpg" alt="before"><figcaption>before: the original edit</figcaption></figure>
+      <figure><img src="after.jpg" alt="after"><figcaption>after: dropframe</figcaption></figure>
+    </div>
+    <div class="gifs" style="margin-top:14px">
+      <figure><img src="buildup.gif" alt="build-up"><figcaption>the build-up: one continuous camera move</figcaption></figure>
+      <figure><img src="countdown.gif" alt="countdown"><figcaption>countdown into the end card</figcaption></figure>
+    </div>
+    <img class="board" style="margin-top:14px" src="storyboard.jpg" alt="storyboard">
+    <figcaption>the full 38s reference trailer, one frame every 1.7s</figcaption>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Install</h2>
+<pre><span class="c"># any agent (Claude Code, Cursor, Codex, Copilot, Gemini CLI, opencode, ...)</span>
+npx skills add https://github.com/Zerko-sd/dropframe --skill dropframe
+
+<span class="c"># Claude Code plugin</span>
+/plugin marketplace add Zerko-sd/dropframe
+/plugin install dropframe@dropframe
+
+<span class="c"># Codex</span>
+codex plugin marketplace add Zerko-sd/dropframe
+codex plugin add dropframe@dropframe
+
+<span class="c"># needs python 3.10+, ffmpeg, then:</span>
+pip install numpy pillow scipy librosa</pre>
+    <p style="color:var(--dim);margin-top:14px">Then just ask: <code>/dropframe make a 30s trailer from ./footage with track.mp3, starting at 0:42</code></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>dropframe vs template video skills</h2>
+    <div class="tw"><table>
+      <tr><th></th><th>dropframe</th><th>Template / composition skills</th></tr>
+      <tr><td>Starts from</td><td>Your footage, brand kit, your song</td><td>Your codebase or a prompt; bundled music</td></tr>
+      <tr><td>Music</td><td>Beat grid detected; cuts on strong kicks; drop built from your track</td><td>Background bed chosen to fit the story</td></tr>
+      <tr><td>Sync</td><td>Measured in ms</td><td>Timed by the composer</td></tr>
+      <tr><td>Sound</td><td>Your song only, remixed</td><td>Bundled SFX + optional narration</td></tr>
+      <tr><td>Motion</td><td>AE-grade eases, motion blur, momentum cuts, depth</td><td>Web/CSS composition animation</td></tr>
+      <tr><td>Re-editing</td><td>Re-times and re-themes an existing edit</td><td>Generates a new video</td></tr>
+      <tr><td>Output</td><td>MP4 + remixed WAV + markers CSV for After Effects</td><td>MP4 + share copy</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">MIT licensed · <a href="https://github.com/Zerko-sd/dropframe">github.com/Zerko-sd/dropframe</a> · made by <a href="https://github.com/Zerko-sd">Nitish Kumar</a></div>
+</footer>
+</body>
+</html>

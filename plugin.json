@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dropframe",
+  "version": "0.1.0",
+  "description": "Edit like a motion designer. Turn your footage, brand kit and a song into a beat-synced, After-Effects-quality trailer, with sync you can measure and no AI look.",
+  "author": { "name": "Nitish Kumar", "url": "https://github.com/Zerko-sd" },
+  "homepage": "https://zerko-sd.github.io/dropframe/",
+  "repository": "https://github.com/Zerko-sd/dropframe",
+  "license": "MIT",
+  "keywords": ["video", "motion-design", "after-effects", "beat-sync", "trailer", "skill"]
+}

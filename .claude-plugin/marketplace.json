@@ -1,0 +1,14 @@
+{
+  "name": "dropframe",
+  "owner": { "name": "Nitish Kumar", "url": "https://github.com/Zerko-sd" },
+  "metadata": { "description": "Every cut on the kick. Every drop on the frame. Edit like a motion designer. Turn your footage, brand kit and a song into a beat-synced, After-Effects-quality trailer, with sync you can measure and no AI look." },
+  "plugins": [
+    {
+      "name": "dropframe",
+      "source": "./",
+      "description": "Edit like a motion designer. Turn your footage, brand kit and a song into a beat-synced, After-Effects-quality trailer, with sync you can measure and no AI look.",
+      "version": "0.1.0",
+      "category": "creative"
+    }
+  ]
+}

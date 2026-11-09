@@ -1,0 +1,25 @@
+{
+  "name": "dropframe",
+  "version": "0.1.0",
+  "description": "Edit like a motion designer. Turn your footage, brand kit and a song into a beat-synced, After-Effects-quality trailer, with sync you can measure and no AI look.",
+  "author": { "name": "Nitish Kumar", "url": "https://github.com/Zerko-sd" },
+  "homepage": "https://zerko-sd.github.io/dropframe/",
+  "repository": "https://github.com/Zerko-sd/dropframe",
+  "license": "MIT",
+  "keywords": ["video", "motion-design", "after-effects", "beat-sync", "trailer", "skill"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "dropframe",
+    "shortDescription": "Beat-synced, After-Effects-quality motion video.",
+    "longDescription": "Edit like a motion designer: a beat grid fitted to your song, every cut on a strong kick, a build-up and drop remixed from your own track, AE-grade easing and motion blur, layered depth, one continuous visual world, and sync measured in milliseconds.",
+    "developerName": "Nitish Kumar",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write", "Execute"],
+    "websiteURL": "https://zerko-sd.github.io/dropframe/",
+    "defaultPrompt": [
+      "Make a 30s trailer from my footage, synced to this song.",
+      "Re-edit this video onto a new track and make the drop hit harder.",
+      "Turn my brand kit and this song into a beat-synced reel."
+    ]
+  }
+}
